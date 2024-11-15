@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Product Pre-Order</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Menu -->
+    <nav class="menu">
+        <div class="logo">
+            <img src="imgs/gpLogo.jpeg" alt="Brand Logo">
+        </div>
+        <ul class="menu-items">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#video">Showcase</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#comparison">Comparison</a></li>
+            <li><a href="#preorder">Preorder</a></li>
+        </ul>
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+        </div>
+    </nav>
+
+    <section id="features">
+        <h2>Product Features</h2>
+        <div class="features-grid">
+            <a href="javascript:void(0);" class="feature"
+                onclick="showPopup('Boult Cruisecam', 'Capture every detail with 1080p Full HD recording and a high-quality 2MP sensor, ensuring your footage is crisp and clear.')">
+                <img src="imgs/cam.png" alt="Feature 1">
+                <h3>Boult Cruisecam</h3>
+                <p>Capture every detail with 1080p Full HD recording and a high-quality 2MP sensor, ensuring your footage is
+                    crisp and clear.</p>
+            </a>
+            <a href="javascript:void(0);" class="feature"
+                onclick="showPopup('True Wireless Earbuds', 'Bluetooth Headset High-end Material ear buds with C-Type Cable, perfect for intense workouts and unpredictable weather.')">
+                <img src="imgs/buds.png" alt="Feature 2">
+                <h3>True Wireless Earbuds</h3>
+                <p>Bluetooth Headset High-end Material ear buds with C-Type Cable, perfect for intense workouts and
+                    unpredictable weather.</p>
+            </a>
+            <a href="javascript:void(0);" class="feature"
+                onclick="showPopup('True Wireless Earbuds', 'Bluetooth Headset High-end Material ear buds with C-Type Cable, perfect for intense workouts and unpredictable weather.')">
+                <img src="imgs/key.webp" alt="Feature 3">
+                <h3>Wired Usb Gaming Keyboard</h3>
+                <p>Wired Gaming Keyboard & Mouse IT-KB 334/RGB,Spill resistant, Keyboard and Mouse</p>
+            </a>
+            <a href="javascript:void(0);" class="feature"
+                onclick="showPopup('True Wireless Earbuds', 'Bluetooth Headset High-end Material ear buds with C-Type Cable, perfect for intense workouts and unpredictable weather.')">
+                <img src="imgs/rim.jpg" alt="Feature 4">
+                <h3>Car Wheel Rim Tyre Tire Valve</h3>
+                <p>Durable Leatherette material
+                Anti-slip grip while driving and gives smooth touch to your hands. Enhance your car interior look  Full Black colour</p>
+            </a>
+        </div>
+        <!-- Pop-up Section (hidden initially) -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <!-- Close icon on the top-right corner -->
+                <span class="popup-close" onclick="closePopup()">&times;</span>
+                <h2 id="popup-title"></h2>
+                <p id="popup-description"></p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Video Showcase Section -->
+    <section id="video">
+        <h2>Product Showcase</h2>
+        <div class="video-container">
+            <!-- Embedded YouTube Video -->
+            <iframe src="https://www.youtube.com/embed/GPtBsKrfPTw" frameborder="0" allowfullscreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <h2>User Reviews</h2>
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User 1" class="review-avatar">
+                    <div class="review-info">
+                        <h4>User 1</h4>
+                        <div class="review-rating">
+                            <span>★★★★☆</span> <!-- Star rating -->
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"This product changed my life! Highly recommend."</p>
+            </div>
+    
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User 2" class="review-avatar">
+                    <div class="review-info">
+                        <h4>User 2</h4>
+                        <div class="review-rating">
+                            <span>★★★★★</span> <!-- Star rating -->
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"Outstanding performance and sleek design. 5 stars!"</p>
+            </div>
+    
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="User 3" class="review-avatar">
+                    <div class="review-info">
+                        <h4>User 3</h4>
+                        <div class="review-rating">
+                            <span>★★★☆☆</span> <!-- Star rating -->
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"Affordable, efficient, and reliable. Great value!"</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="comparison">
+        <h2>Compare Products</h2>
+        <div class="comparison-container">
+            <!-- New Product Card -->
+            <div class="comparison-card new-product">
+                <h3>New Product</h3>
+                <ul>
+                    <li><strong>Battery Life:</strong> 20 hours</li>
+                    <li><strong>Design:</strong> Ultra-sleek</li>
+                    <li><strong>Price:</strong> $299</li>
+                    <li><strong>Rating:</strong> ★★★★☆</li>
+                </ul>
+            </div>
+    
+            <!-- Previous Version Card -->
+            <div class="comparison-card previous-version">
+                <h3>Previous Version</h3>
+                <ul>
+                    <li><strong>Battery Life:</strong> 15 hours</li>
+                    <li><strong>Design:</strong> Sleek</li>
+                    <li><strong>Price:</strong> $199</li>
+                    <li><strong>Rating:</strong> ★★★☆☆</li>
+                </ul>
+            </div>
+    
+            <!-- Competitor's Product Card -->
+            <div class="comparison-card competitor-product">
+                <h3>Competitor's Product</h3>
+                <ul>
+                    <li><strong>Battery Life:</strong> 18 hours</li>
+                    <li><strong>Design:</strong> Bulky</li>
+                    <li><strong>Price:</strong> $250</li>
+                    <li><strong>Rating:</strong> ★★★★☆</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div id="preorder">
+        <h2>Pre-order Benefits</h2>
+        <div class="benefit-grid">
+            <div class="benefit">
+                <div class="benefit-icon">
+                    <i class="fas fa-percent"></i> 
+                </div>
+                <h3>Special Discount</h3>
+                <p>Get a 20% discount on your pre-order!</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3>Free Shipping</h3>
+                <p>Enjoy free shipping on all pre-orders.</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">
+                    <i class="fas fa-gift"></i> 
+                </div>
+                <h3>Exclusive Gift</h3>
+                <p>Receive a free gift with every pre-order!</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/GodParticlesOfficial/" target="_blank" class="icon fb"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="https://in.linkedin.com/company/god-particles" target="_blank" class="icon li"><i
+                    class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/godparticles_official/?hl=en" target="_blank" class="icon ig"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.whatsapp.com" target="_blank" class="icon wa"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" target="_blank" class="icon custom"><i class="fas fa-asterisk"></i></a>
+        </div>
+        <p>&copy; 2024 Tech Product</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

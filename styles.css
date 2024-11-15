@@ -1,0 +1,601 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f6f6;
+    color: #333;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu .logo img {
+    max-height: 70px;
+}
+
+.menu .menu-items {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.menu .menu-items a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border: 2px solid #00bcd4;
+    border-radius: 25px;
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    width: 200px;
+    transition: width 0.3s ease;
+}
+
+#comparison {
+    padding: 2rem;
+    background-color: #f1b2bf;
+    text-align: center;
+}
+
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.comparison-card {
+    background-color: #f7f3f3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 250px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #c1eef8;
+}
+
+.comparison-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.comparison-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comparison-card li {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+.comparison-card strong {
+    color: #333;
+}
+
+.comparison-card .rating {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.comparison-card .rating span {
+    color: gold;
+    font-size: 1.2rem;
+}
+
+.comparison-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.comparison-card.new-product {
+    border-left: 4px solid #4CAF50;
+}
+
+.comparison-card.previous-version {
+    border-left: 4px solid #FFC107;
+}
+
+.comparison-card.competitor-product {
+    border-left: 4px solid #FF5722;
+}
+
+@media (max-width: 768px) {
+    .comparison-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+.search-box:hover {
+    box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
+}
+
+.search-box input:focus {
+    width: 250px;
+    transition: width 0.3s ease;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.popup-close:hover {
+    color: red;
+}
+.menu-items li.active a {
+    color: #ff6347;
+}
+#features {
+    padding: 2rem;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#features h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.feature {
+    background: rgb(144, 226, 223);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    background-color: #f0f4f1;
+}
+
+.feature img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+#video {
+    text-align: center;
+    padding: 2rem;
+}
+
+.video-container {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#reviews {
+    padding: 2rem;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.review-card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.review-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    object-fit: cover;
+}
+
+.review-info h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.review-rating span {
+    color: gold;
+    font-size: 1.2rem;
+}
+
+.review-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .reviews-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 2rem;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.carousel .review {
+    min-width: 300px;
+    margin: 0 1rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+    transform: scale(0.95);
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.carousel .review:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: #f0f4f1;
+    opacity: 1;
+}
+
+.review .user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    background-color: #00bcd4;
+}
+
+.review .user-avatar:hover {
+    background-color: #00796b;
+}
+
+.review h3 {
+    font-size: 1.25rem;
+    color: #00796b;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.review h3:hover {
+    color: #004d40;
+}
+
+.review p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.review .rating {
+    font-size: 1.2rem;
+    color: #ff9800;
+}
+
+.review .date {
+    font-size: 0.875rem;
+    color: #888;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+#comparison {
+    padding: 2rem;
+    background-color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f9f9f9;
+}
+
+thead {
+    background: #222;
+    color: white;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background: #f3f3f3;
+}
+
+#preorder {
+    padding: 4rem 3rem;
+    background: #f1f8e9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+#preorder h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.benefit {
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.benefit:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: #f0f4f1;
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    color: #00bcd4;
+    margin-bottom: 1rem;
+}
+
+.benefit h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.benefit p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.benefit .discount {
+    color: #ff9800;
+}
+
+.benefit .free-shipping {
+    color: #25d366;
+}
+
+.benefit .exclusive {
+    color: #3b5998;
+}
+
+footer {
+    background-color: #0b1513;
+    /* Dark teal footer */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer a {
+    color: #0a2929;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #050b0b;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+footer .social-icons .icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #333;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons .icon:hover {
+    background-color: #00796b;
+    transform: scale(1.1);
+}
+
+footer .social-icons .fb {
+    background-color: #3b5998;
+}
+
+footer .social-icons .li {
+    background-color: #0077b5;
+}
+
+footer .social-icons .ig {
+    background-color: #e1306c;
+}
+
+footer .social-icons .wa {
+    background-color: #25d366;
+}
+
+footer .social-icons .custom {
+    background-color: #606060;
+}
+
+/* Hover effects for each specific icon */
+footer .social-icons .fb:hover {
+    background-color: #4267b2;
+}
+
+footer .social-icons .li:hover {
+    background-color: #005582;
+}
+
+footer .social-icons .ig:hover {
+    background-color: #c13584;
+}
+
+footer .social-icons .wa:hover {
+    background-color: #128c7e;
+}
+
+footer .social-icons .custom:hover {
+    background-color: #404040;
+}
